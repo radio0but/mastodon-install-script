@@ -75,7 +75,7 @@ else
 fi 
 # Setup PostgreSQL
 set +e
-echo "CREATE USER mastodon CREATEDB" |  -u postgres psql -f -
+echo "CREATE USER mastodon CREATEDB" |  postgres psql -f -
 set -e 
 
 # Setup Mastodon 
