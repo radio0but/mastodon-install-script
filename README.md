@@ -1,4 +1,4 @@
-# Mastodon鯖構築支援スクリプト  
+# Sudoless Mastodon Install Scrrpt  
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/nesosuke/mastodon-install-script)][releases]
 [![branch update-stable](https://img.shields.io/badge/branch-update--stable-blueviolet)][update-stable]  
 
