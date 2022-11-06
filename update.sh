@@ -12,11 +12,11 @@ git checkout main
 git merge upstream/main
 
 # Reget Yarnpkg pubkey
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg |  apt-key add -
 
 # Update pkg(s) 
-sudo apt update -y 
-sudo apt upgrade -y 
+ apt update -y 
+ apt upgrade -y 
 cd ~/.rbenv/plugins/ruby-build && git pull 
 printf N | rbenv install $(cat ~/live/.ruby-version)
 rbenv global $(cat ~/live/.ruby-version)
@@ -25,16 +25,16 @@ gem update --system
 gem install bundler
 bundle update
 bundle install 
-sudo yarn install 
+ yarn install 
 
 
 # Migrate  
 RAILS_ENV=production bundle exec rails assets:clobber 
 RAILS_ENV=production bundle exec rails db:migrate 
 RAILS_ENV=production bundle exec rails assets:precompile 
-sudo systemctl restart mastodon-*.service
+ systemctl restart mastodon-*.service
 RAILS_ENV=production ~/live/bin/tootctl cache clear
 
 # Migrate again
 RAILS_ENV=production bundle exec rails db:migrate 
-sudo systemctl restart mastodon-*.service
+ systemctl restart mastodon-*.service
