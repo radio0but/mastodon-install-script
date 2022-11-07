@@ -3,6 +3,8 @@
 read -p "Input your server domain w/o \"http\" (e.g. mstnd.example.com) > " SERVER_DOMAIN
 read -p "Obtain SSL Cert ? [y/N] > " getCERT_FLAG
 
+
+
 if [ "$getCERT_FLAG" == "y" -o "$getCERT_FLAG" == "Y" ]
 then 
   read -p "Input your mail adress > " ADMIN_MAIL_ADDRESS
@@ -22,7 +24,7 @@ git clone https://github.com/mastodon/mastodon.git ~/live
 cd ~/live
 
 # Install packages
-curl -sL https://deb.nodesource.com/setup_12.x |  -E bash -
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
  apt install -y npm 
  apt install -y \
   ufw imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core \
